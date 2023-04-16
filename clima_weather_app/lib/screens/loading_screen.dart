@@ -16,12 +16,18 @@ class _LoadingScreenState extends State<LoadingScreen> {
   }
 
   @override
+  void initState() {
+    //whenever the stful widget is rendered on the screen, this is the first method that is called and only once.
+    super.initState();
+    getLocation();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            getLocation();
             //Get the current location
           },
           child: Text('Get Location'),
